@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "Golos Text";
+  font-weight: 400;
+  font-style: normal;
+  src: local(Golos Text),
+       url("./fonts/GolosText-Regular.woff2") format("woff2"),
+       url("./fonts/GolosText-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Golos Text";
+  font-weight: 500;
+  font-style: normal;
+  src: local(Golos Text),
+       url("./fonts/GolosText-Medium.woff2") format("woff2"),
+       url("./fonts/GolosText-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Golos Text";
+  font-weight: 600;
+  font-style: normal;
+  src: local(Golos Text),
+       url("./fonts/GolosText-SemiBold.woff2") format("woff2"),
+       url("./fonts/GolosText-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Golos Text";
+  font-weight: 700;
+  font-style: normal;
+  src: local(Golos Text),
+       url("./fonts/GolosText-Bold.woff2") format("woff2"),
+       url("./fonts/GolosText-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Merriweather";
+  font-weight: 400;
+  font-style: normal;
+  src: local(Merriweather),
+       url("./fonts/Merriweather-Regular.woff2") format("woff2"),
+       url("./fonts/Merriweather-Regular.woff") format("woff");
+}
+
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-style: normal;
+  src: local(Montserrat),
+       url("./fonts/Montserrat-Medium.woff2") format("woff2"),
+       url("./fonts/Montserrat-Medium.woff") format("woff");
+}
+
+:root {
+  --font-family: "Golos Text", "Arial", sans-serif;
+  --second-family: "Merriweather", "Arial", sans-serif;
+  --third-family: "Montserrat", "Arial", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
