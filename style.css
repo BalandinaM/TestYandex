@@ -61,6 +61,7 @@
   --beige: #e9ded4;
   --black:  #313131;
   --black-opacity: rgba(49, 49, 49, 0.2);
+  --black-opacity-06: rgba(49, 49, 49, 0.6);
   --bg-black:  #1f1f1f;
   --red: #f54932;
   --blue: #3057a2;
@@ -375,7 +376,7 @@ a {
   position: relative;
   max-width: 335px;
   overflow: hidden;
-
+  margin-bottom: 120px;
 }
 
 .upgrade__slider {
@@ -488,27 +489,97 @@ a {
 
 /*ItemsTourney*/
 
-.main__itemsTourney {}
+.main__itemsTourney {
+  padding: 0 20px;
+}
 
-.itemsTourney__title {}
+.itemsTourney__title {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 40px;
+}
 
-.itemsTourney__slider-container {}
+.itemsTourney__slider-container {
+  position: relative;
+  max-width: 335px;
+  overflow: hidden;
+  margin-bottom: 100px;
+}
 
-.itemsTourney__slider {}
+.itemsTourney__slider {
+  display: flex;
+  align-items: center;
+  transition: all 0.5s;
+  margin-bottom: 40px;
+}
 
-.itemsTourney__item {}
+.itemsTourney__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2px;
+  flex-shrink: 0;
+}
 
-.itemsTourney__img {}
+.itemsTourney__img {
+  width: 244px;
+  height: 244px;
+  margin-bottom: 28px;
+}
 
-.itemsTourney__name {}
+.itemsTourney__name {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  color: var(--black);
+  margin-bottom: 8px;
+}
 
-.itemsTourney__text {}
+.itemsTourney__text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--black-opacity-06);
+  margin-bottom: 20px;
+}
 
-.itemsTourney__link {}
+.itemsTourney__link {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 62px;
+  padding: 6px 12px;
+}
+.itemsTourney__wrap-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 129px;
+  height: 36px;
+  margin: 0 auto;
+}
 
-.itemsTourney__wrap-control {}
+.itemsTourney__button {
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  background-color: var(--black);
 
-.itemsTourney__button {}
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 .itemsTourney__button--prev {}
 

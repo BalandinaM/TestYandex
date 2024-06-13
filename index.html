@@ -145,50 +145,54 @@
       <div class="itemsTourney__slider-container">
         <div class="itemsTourney__slider">
           <div class="itemsTourney__item">
-            <img src="" alt="" class="itemsTourney__img">
-            <h4 class="itemsTourney__name">Хозе-Рауль Капабланка</h4>
+            <img class="itemsTourney__img" src="./images/tourney_photo_mobile.png" alt="Фото участника турнира" width="244" height="244" >
+            <h4 class="itemsTourney__name">Хозе-Рауль&#160;Капабланка</h4>
             <p class="itemsTourney__text">Чемпион мира по шахматам</p>
             <a href="" class="itemsTourney__link">Подробнее</a>
           </div>
           <div class="itemsTourney__item">
-            <img src="" alt="" class="itemsTourney__img">
-            <h4 class="itemsTourney__name">Эммануил Ласкер</h4>
+            <img class="itemsTourney__img" src="./images/tourney_photo_mobile.png" alt="Фото участника турнира" width="244" height="244">
+            <h4 class="itemsTourney__name">Эммануил&#160;Ласкер</h4>
             <p class="itemsTourney__text">Чемпион мира по шахматам</p>
             <a href="" class="itemsTourney__link">Подробнее</a>
           </div>
           <div class="itemsTourney__item">
-            <img src="" alt="" class="itemsTourney__img">
-            <h4 class="itemsTourney__name">Александр Алехин</h4>
+            <img class="itemsTourney__img" src="./images/tourney_photo_mobile.png" alt="Фото участника турнира" width="244" height="244">
+            <h4 class="itemsTourney__name">Александр&#160;Алехин</h4>
             <p class="itemsTourney__text">Чемпион мира по шахматам</p>
             <a href="" class="itemsTourney__link">Подробнее</a>
           </div>
           <div class="itemsTourney__item">
-            <img src="" alt="" class="itemsTourney__img">
-            <h4 class="itemsTourney__name">Арон Нимцович</h4>
+            <img class="itemsTourney__img" src="./images/tourney_photo_mobile.png" alt="Фото участника турнира" width="244" height="244">
+            <h4 class="itemsTourney__name">Арон&#160;Нимцович</h4>
             <p class="itemsTourney__text">Чемпион мира по шахматам</p>
             <a href="" class="itemsTourney__link">Подробнее</a>
           </div>
           <div class="itemsTourney__item">
-            <img src="" alt="" class="itemsTourney__img">
-            <h4 class="itemsTourney__name">Рихард Рети</h4>
+            <img class="itemsTourney__img" src="./images/tourney_photo_mobile.png" alt="Фото участника турнира" width="244" height="244">
+            <h4 class="itemsTourney__name">Рихард&#160;Рети</h4>
             <p class="itemsTourney__text">Чемпион мира по шахматам</p>
             <a href="" class="itemsTourney__link">Подробнее</a>
           </div>
           <div class="itemsTourney__item">
-            <img src="" alt="" class="itemsTourney__img">
-            <h4 class="itemsTourney__name">Остап Бендер</h4>
+            <img class="itemsTourney__img" src="./images/tourney_photo_mobile.png" alt="Фото участника турнира" width="244" height="244">
+            <h4 class="itemsTourney__name">Остап&#160;Бендер</h4>
             <p class="itemsTourney__text">Гроссмейстер</p>
             <a href="" class="itemsTourney__link">Подробнее</a>
           </div>
         </div>
         <div class="itemsTourney__wrap-control">
-          <button class="itemsTourney__button--prev">Назад</button>
+          <button class="itemsTourney__button" id="btnPrevTourney">
+            <svg width="10" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.077 15.923 1.154 9l6.923-6.923" stroke="#fff" stroke-width="1.636" stroke-linecap="square"/></svg>
+          </button>
           <div class="itemsTourney__wrap-counter">
-            <span>1</span>
+            <span id="current">1</span>
             <span>/</span>
-            <span>6</span>
+            <span id="total">6</span>
           </div>
-          <button class="itemsTourney__button--next">Вперед</button>
+          <button class="itemsTourney__button" id="btnNextTourney">
+            <svg width="10" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.923 2.077 8.846 9l-6.923 6.923" stroke="#fff" stroke-width="1.636" stroke-linecap="square"/></svg>
+          </button>
         </div>
       </div>
     </section>
@@ -200,5 +204,6 @@
       подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».</p>
   </footer>
   <script src="script.js" type="text/javascript"></script>
+  <script src="sliderTourney.js" type="text/javascript"></script>
 </body>
 </html>

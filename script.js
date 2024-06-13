@@ -42,10 +42,20 @@ const buttonPrev = document.querySelector('#btnPrev');
 const buttonNext = document.querySelector('#btnNext');
 const dots = document.querySelectorAll('.sliderControl__dot');
 
-// console.log(sliderContainer, slider, sliderItems, buttonPrev, buttonNext, dots)
-
 let sliderCount = 0;
 let sliderWidth;
+
+// function rollSlider(slider, count, width) {
+//   slider.style.transform = `translateX(${-count * width}px)`;
+// }
+
+// function showSlide(width, sliderContainer, slider, sliderItems, count, ) {
+//   width = sliderContainer.offsetWidth;
+//   slider.style.width = width * sliderItems.length + 'px';
+//   sliderItems.forEach(item => item.style.width = width + 'px');
+
+//   rollSlider(slider, count, width);
+// }
 
 buttonNext.addEventListener('click', nextSlide);
 buttonPrev.addEventListener('click', prevSlide);
@@ -101,3 +111,4 @@ dots.forEach((dot, index) => {
     thisSlide(sliderCount);
   })
 })
+
