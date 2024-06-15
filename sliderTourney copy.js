@@ -59,10 +59,13 @@
 // }
 
 const itemsTourney = document.querySelectorAll('.itemsTourney__item');
-console.log(itemsTourney);
+const currentValueCounter = document.querySelector('#current');
+const totalValueCounter = document.querySelector('#total');
 
-for (let i = 0; i <= itemsTourney.length; i++) {
-  console.log(itemsTourney[i]);
+totalValueCounter.textContent = itemsTourney.length;
+
+function showNumberCurrentSlide(index) {
+  currentValueCounter.textContent = `${index + 1}`
 }
 
 async function delayedLoop() {
@@ -72,9 +75,9 @@ async function delayedLoop() {
 
   for (let i = 0; i < itemsTourney.length; i++) {
     itemsTourney[i].classList.add('itemsTourney__item--current');
+    showNumberCurrentSlide(i);
 
-  await new Promise(resolve => setTimeout(resolve, 2000));
-    //console.log(itemsTourney[i]);
+    await new Promise(resolve => setTimeout(resolve, 2000));
       itemsTourney[i].classList.remove('itemsTourney__item--current');
   }
 }
@@ -85,4 +88,3 @@ setInterval(() => {
   delayedLoop()
 }, itemsTourney.length * 2000);
 
-// запускается цикл который добавляет класс каррент, через 4 секунды класс каррент удаляется у элемента и следом добавляется класс на следующий эдемент, через 4 секунды он удаляеся
