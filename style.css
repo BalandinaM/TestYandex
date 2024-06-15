@@ -504,20 +504,24 @@ a {
 }
 
 .itemsTourney__slider-container {
-  position: relative;
+  /* position: relative;
   max-width: 335px;
-  overflow: hidden;
+  overflow: hidden; */
   margin-bottom: 100px;
 }
 
 .itemsTourney__slider {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  transition: all 0.5s;
+  transition: all 0.5s; */
   margin-bottom: 40px;
 }
 
 .itemsTourney__item {
+  display: none;
+}
+
+.itemsTourney__item--current {
   display: flex;
   flex-direction: column;
   align-items: center;
