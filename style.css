@@ -590,3 +590,76 @@ a {
 .itemsTourney__button--next {}
 
 .itemsTourney__wrap-counter {}
+
+.footer {
+  /* max-width: 375px; */
+}
+
+.footer__runLine {
+  width: 375px;
+  display: flex;
+  overflow: hidden;
+  gap: 20px;
+  justify-content: space-around;
+  min-width: 100%;
+  margin: 0 auto;
+  background-color: var(--red);
+}
+
+.footer__runLine p {
+
+  /* transition: all 0.1s ease-in-out;
+  animation: scroll 22s infinite linear; */
+}
+
+.marquee::after {
+  content: ' Шахматы двигают вперёд не только культуру, но и экономику!'
+}
+
+
+.marquee {
+  flex: 0 0 auto;
+  animation: scroll 20s linear infinite;
+  display: flex;
+  background-color: var(--red);
+
+  padding: 10px 12px;
+  height: 38px;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+  text-align: right;
+  color: var(--white);
+}
+
+.marquee span {
+  display: block;
+  content: '';
+  margin: 6px 16px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--white);
+  border-radius: 50%;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(20%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.footer__notice {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: var(--black);
+  opacity: 0.6;
+  background-color: var(--beige);
+  padding: 40px 20px 60px 20px;
+}
