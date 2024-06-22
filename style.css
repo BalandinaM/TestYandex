@@ -215,14 +215,15 @@ a {
   color: var(--bg-black);
 }
 
-.header__link--light  br{
-  display: none;
-}
-
 .header__runLine {
   background-color: var(--red);
   padding: 10px 12px;
   height: 38px;
+
+  display: flex;
+}
+
+.header__runLine p {
   font-family: var(--second-family);
   font-weight: 400;
   font-size: 16px;
@@ -230,8 +231,6 @@ a {
   text-transform: uppercase;
   text-align: right;
   color: var(--white);
-
-  display: flex;
 }
 
 .header__runLine span::before {
@@ -734,8 +733,14 @@ a {
     border: 2px solid var(--bg-black);
   }
 
-  .header__link--light br {
-    display: inline;
+  .header__runLine {
+    height: 60px;
+
+    padding: 16px 12px;
+  }
+
+  .header__runLine p {
+    font-size: 22px;
   }
 }
 
