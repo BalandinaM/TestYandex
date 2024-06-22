@@ -114,12 +114,22 @@ a {
 
 /*Header*/
 
-.header {
-  padding-top: 18px;
+.wrap-header {
   background-blend-mode: color-burn;
   background:
-  url('./images/header_bg.png'),
-  linear-gradient(90deg, rgba(233,222,212,1) 0%, rgba(233,222,212,1) 100%);
+    /* url(./images/header_bg_5.png) 3px 384px no-repeat, */
+    url('./images/header_bg.png'),
+    linear-gradient(90deg, rgba(233,222,212,1) 0%, rgba(233,222,212,1) 100%);
+}
+
+.header {
+  padding-top: 18px;
+  background:
+  url('./images/header_bg_1.png') 146px 660px no-repeat,
+  url('./images/header_bg_2.png') 0px 532px no-repeat,
+  url('./images/header_bg_3.png') 62px 540px no-repeat,
+  url('./images/header_bg_4.png') 222px 498px no-repeat,
+  url(./images/header_bg_5.png) 3px 384px no-repeat;
 }
 
 .container {
@@ -180,13 +190,6 @@ a {
   padding-left: 18px;
   padding-right: 18px;
   padding-bottom: 289px;
-
-  background:
-  url('./images/header_bg_1.png') 145px 285px no-repeat,
-  url('./images/header_bg_2.png') 0px 160px no-repeat,
-  url('./images/header_bg_3.png') 60px 165px no-repeat,
-  url('./images/header_bg_4.png') 220px 120px no-repeat,
-  url(./images/header_bg_5.png) 0px 0px no-repeat;
 }
 
 .header__link {
@@ -672,7 +675,14 @@ a {
 @media (min-width: 1366px) {
   .header {
     padding-top: 26px;
-
+    background:
+      url('./images/d_header_bg_1.png') 835px 482px no-repeat,
+      url('./images/d_header_bg_2.png') 1238px 558px no-repeat,
+      url('./images/d_header_bg_3.png') 0px 261px no-repeat,
+      url('./images/d_header_bg_4.png') 730px 270px no-repeat,
+      url('./images/d_header_bg_5.png') 1061px 165px no-repeat,
+      url(./images/d_header_bg_6.png) 613px 0px no-repeat,
+      url(./images/d_header_bg_7.png) 673px 0px no-repeat;
 
   }
 
