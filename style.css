@@ -450,6 +450,10 @@ a {
   color: var(--black);
 }
 
+.item__text br {
+  display: none;
+}
+
 .upgrade__sliderControl {
   display: flex;
   justify-content: space-between;
@@ -761,7 +765,7 @@ a {
 
   .main__event {
     margin-top: 0;
-    margin-bottom: 206px;
+    margin-bottom: 200px;
   }
 
   .event__title {
@@ -843,7 +847,7 @@ a {
 
   .event__infoTable {
     padding-left: 590px;
-    padding-right: 70px;
+    padding-right: 72px;
   }
 
   .infoTable__wrap-string,
@@ -867,6 +871,113 @@ a {
 
   .infoTable__notice {
     font-size: 20px;
+  }
+
+  /*Slider*/
+
+  .main__upgrade {
+    padding: 0 72px;
+    position: relative;
+  }
+
+  .upgrade__title {
+    font-size: 54px;
+    line-height: 120%;
+    padding-right: 500px;
+    margin-bottom: 55px;
+  }
+
+  .upgrade__subtitle {
+    font-size: 20px;
+    width: 280px;
+    margin: 0;
+    position: absolute;
+    top: 72px;
+    left: 373px;
+  }
+
+  .upgrade__subtitle::after {
+    display: none;
+  }
+
+  .upgrade__slider-container {
+    max-width: 1222px;
+    overflow: visible;
+  }
+
+  .upgrade__slider {
+    display: grid;
+    grid-template-columns: 394px 394px 394px;
+    grid-template-rows: 112px 112px 136px;
+    gap: 20px;
+
+    transition: none;
+  }
+
+  .slider__item {
+    height: auto;
+    min-height: 112px;
+    width: 394px;
+    padding: 20px;
+    /* padding-left: 62px; */
+  }
+
+  .slider__wrap-items .slider__item {
+    width: 394px;
+  }
+
+  .upgrade__slider .slider__wrap-items:first-child {
+    grid-column: span 2;
+  }
+
+  .upgrade__slider .slider__wrap-items:nth-child(2) {
+    grid-column: span 2;
+  }
+
+  .slider__item--thirdChild {
+    grid-row: span 2;
+    height: 244px;
+  }
+
+  .upgrade__slider .slider__item:nth-child(4) {
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+
+  .upgrade__slider .slider__item:nth-child(5) {
+    grid-column: 2/4;
+    padding-right: 290px;
+    width: auto;
+  }
+
+  .slider__wrap-items {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .wrap-items__item {
+    min-height: 112px;
+    width: 394px;
+    padding: 20px;
+    flex-basis: 394px;
+    flex-shrink: 0;
+
+    background-blend-mode: color-burn;
+    background:
+      url('./images/upgrade_bg.png'),
+      linear-gradient(90deg, rgba(233, 222, 212, 1) 0%, rgba(233, 222, 212, 1) 100%);
+  }
+
+  .item__text {
+    font-size: 20px;
+  }
+
+  .item__text br {
+    display: block;
+  }
+
+  .upgrade__sliderControl {
+    display: none;
   }
 }
 

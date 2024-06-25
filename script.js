@@ -1,35 +1,53 @@
 //Изменение наполнения карточек в upgrade в зависимости от ширины экрана
 
-let wrapItems = Array.from(document.querySelectorAll('.slider__wrap-items'));
-let items = Array.from(document.querySelectorAll('.wrap-items__item'));
+const wrapItems = Array.from(document.querySelectorAll('.slider__wrap-items'));
+const items = Array.from(document.querySelectorAll('.wrap-items__item'));
+const sliderControl = document.querySelector('.upgrade__sliderControl');
 let sizeDesktop = 1366;
 
+// это можно сделать через css
+
+// let hiddenControlSlider = () => {
+//   if (window.screen.width >= sizeDesktop) {
+//     sliderControl.style.display = "none";
+//   } else if (window.screen.width < sizeDesktop) {
+//     sliderControl.style.display = "flex";
+//   }
+// };
+
+
 let setClassDepScreenWidth = () => {
+  //hiddenControlSlider();
   if (window.screen.width >= sizeDesktop) {
     for (let elem of wrapItems) {
-      elem.classList.remove("slider__wrap-items");
+      console.log('!!!');
+      // elem.classList.remove("slider__wrap-items");
       elem.classList.remove("slider__item");
     }
-    for (let elem of items) {
-      elem.classList.remove("wrap-items__item");
-      elem.classList.add("slider__item");
-    }
+    // for (let elem of items) {
+    //   //elem.classList.remove("wrap-items__item");
+    //   //elem.classList.add("slider__item");
+    // }
   } else {
     for (let elem of wrapItems) {
-      elem.classList.add("slider__wrap-items");
+      console.log('---');
+      //elem.classList.add("slider__wrap-items");
       elem.classList.add("slider__item");
     }
-    for (let elem of items) {
-      elem.classList.add("wrap-items__item");
-      elem.classList.remove("slider__item");
-    }
+    // for (let elem of items) {
+    //   elem.classList.add("wrap-items__item");
+    //   elem.classList.remove("slider__item");
+    // }
   }
 };
 
 setClassDepScreenWidth();
 
 window.addEventListener('resize', (e) => {
+  //hiddenControlSlider();
   setClassDepScreenWidth();
+  showSlide();
+
 })
 
 
@@ -52,32 +70,52 @@ let sliderWidth;
 // function showSlide(width, sliderContainer, slider, sliderItems, count, ) {
 //   width = sliderContainer.offsetWidth;
 //   slider.style.width = width * sliderItems.length + 'px';
-//   sliderItems.forEach(item => item.style.width = width + 'px');
+//   for (let elem of sliderItems) {
+//     elem.style.width = width + 'px'
+//   }
+//   // sliderItems.forEach(item => item.style.width = width + 'px');
 
 //   rollSlider(slider, count, width);
 // }
+
+
+
 
 buttonNext.addEventListener('click', nextSlide);
 buttonPrev.addEventListener('click', prevSlide);
 
 
 function showSlide() {
-  sliderWidth = sliderContainer.offsetWidth;
-  slider.style.width = sliderWidth * sliderItems.length + 'px';
-  sliderItems.forEach(item => item.style.width = sliderWidth + 'px');
+  if (window.screen.width >= sizeDesktop) {
+    slider.style.width = '1222px';
+    sliderItems.forEach((item) => (item.style.width = 'auto'));
+    return;
+  } else {
+    sliderWidth = sliderContainer.offsetWidth;
+    slider.style.width = sliderWidth * sliderItems.length + "px";
+    sliderItems.forEach((item) => (item.style.width = sliderWidth + "px"));
 
-  rollSlider();
+    rollSlider();
+  }
 }
 
 showSlide();
 
 
 function rollSlider() {
-  slider.style.transform = `translateX(${-sliderCount * sliderWidth}px)`;
+  if (window.screen.width >= sizeDesktop) {
+    slider.style.transform = 'translateX(0)';
+    return;
+  } else {
+    console.log('меньше 1366');
+    slider.style.transform = `translateX(${-sliderCount * sliderWidth}px)`;
+  }
 }
 
 function nextSlide() {
   sliderCount++;
+  console.log(sliderCount);
+  console.log(sliderItems.length - 1);
   if (buttonPrev.hasAttribute('disabled') === true) {
     buttonPrev.removeAttribute('disabled');
   } else if (sliderCount >= sliderItems.length - 1) {
