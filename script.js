@@ -20,7 +20,7 @@ let setClassDepScreenWidth = () => {
   //hiddenControlSlider();
   if (window.screen.width >= sizeDesktop) {
     for (let elem of wrapItems) {
-      console.log('!!!');
+      //console.log('!!!');
       // elem.classList.remove("slider__wrap-items");
       elem.classList.remove("slider__item");
     }
@@ -30,7 +30,7 @@ let setClassDepScreenWidth = () => {
     // }
   } else {
     for (let elem of wrapItems) {
-      console.log('---');
+      //console.log('---');
       //elem.classList.add("slider__wrap-items");
       elem.classList.add("slider__item");
     }
@@ -107,15 +107,15 @@ function rollSlider() {
     slider.style.transform = 'translateX(0)';
     return;
   } else {
-    console.log('меньше 1366');
+    //console.log('меньше 1366');
     slider.style.transform = `translateX(${-sliderCount * sliderWidth}px)`;
   }
 }
 
 function nextSlide() {
   sliderCount++;
-  console.log(sliderCount);
-  console.log(sliderItems.length - 1);
+  //console.log(sliderCount);
+  //console.log(sliderItems.length - 1);
   if (buttonPrev.hasAttribute('disabled') === true) {
     buttonPrev.removeAttribute('disabled');
   } else if (sliderCount >= sliderItems.length - 1) {

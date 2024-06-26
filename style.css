@@ -510,6 +510,7 @@ a {
 
 .main__itemsTourney {
   padding: 0 20px;
+  margin-bottom: 100px;
 }
 
 .itemsTourney__title {
@@ -526,14 +527,14 @@ a {
   /* position: relative;
   max-width: 335px;
   overflow: hidden; */
-  margin-bottom: 100px;
+
 }
 
 .itemsTourney__slider {
   /* display: flex;
   align-items: center;
   transition: all 0.5s; */
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 
 .itemsTourney__item {
@@ -903,6 +904,7 @@ a {
   .upgrade__slider-container {
     max-width: 1222px;
     overflow: visible;
+    margin-bottom: 201px;
   }
 
   .upgrade__slider {
@@ -978,6 +980,59 @@ a {
 
   .upgrade__sliderControl {
     display: none;
+  }
+
+  .main__itemsTourney {
+    padding: 0 72px;
+    position: relative;
+    margin-bottom: 140px;
+  }
+
+  .itemsTourney__title {
+    font-size: 54px;
+    line-height: 120%;
+    margin-bottom: 60px;
+  }
+
+  .itemsTourney__slider-container {}
+
+  .itemsTourney__slider {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .itemsTourney__item {}
+
+  .itemsTourney__item--current {
+    padding: 0 37px;
+  }
+
+  .itemsTourney__img {
+    width: 320px;
+    height: 320px;
+  }
+
+  .itemsTourney__wrap-control {
+    width: 151px;
+    height: 44px;
+    position: absolute;
+    top: 9px;
+    right: 72px;
+  }
+
+  .itemsTourney__button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .itemsTourney__button svg {
+    width: 12px;
+    height: 20px;
+  }
+
+  .itemsTourney__button svg path {
+    stroke-width: 2px;
   }
 }
 

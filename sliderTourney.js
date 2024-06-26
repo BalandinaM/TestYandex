@@ -26,8 +26,67 @@ async function delayedLoop() {
   }
 }
 
-delayedLoop();
+async function Function() {
+  for (let j = 1; j <= 2; j++) {
+    let currentItem = [];
 
-setInterval(() => {
-  delayedLoop()
+    if (j === 1) {
+      for (let i = 0; i < 3; i++) {
+        currentItem.push(itemsTourney[i]);
+      }
+      currentItem.forEach((item) => {
+        item.classList.add("itemsTourney__item--current");
+      });
+
+      currentValueCounter.textContent = '3'
+
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      currentItem.forEach((item) => {
+        item.classList.remove("itemsTourney__item--current");
+      });
+    } else if (j === 2) {
+      for (let i = 3; i < 6; i++) {
+        currentItem.push(itemsTourney[i]);
+      }
+      currentItem.forEach((item) => {
+        item.classList.add("itemsTourney__item--current");
+      });
+
+      currentValueCounter.textContent = '6'
+
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      currentItem.forEach((item) => {
+        item.classList.remove("itemsTourney__item--current");
+      });
+    }
+  }
+}
+
+const checkWidth = () => {
+  let width = document.documentElement.clientWidth;
+  if (width >= 1366) {
+    console.log("Большой экран, большой экран!!!");
+    Function();
+  } else {
+    console.log("Маааленький экран");
+    delayedLoop();
+  }
+};
+
+checkWidth();
+
+const bigViewport = setInterval(() => {
+  if (document.documentElement.clientWidth >= 1366) {
+    Function();
+  } else {
+    clearInterval(bigViewport);
+  }
+}, 6000);
+
+const smallViewport = setInterval(() => {
+  if (document.documentElement.clientWidth < 1366) {
+    delayedLoop();
+  } else {
+    clearInterval(smallViewport);
+  }
 }, itemsTourney.length * INTERVAL);
