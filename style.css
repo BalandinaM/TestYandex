@@ -102,6 +102,7 @@ a {
 
 .body {
   min-width: 375px;
+  max-width: 1366px;
   margin: 0 auto;
   min-height: 100%;
 
@@ -357,6 +358,17 @@ a {
   padding: 0 20px;
 }
 
+.main__upgrade::before {
+  content: '';
+  width: 325px;
+  height: 200px;
+  top: 2935px;
+  left: 30px;
+  position: absolute;
+  background: url('./images/upgrade_air_mobile.png') no-repeat;
+  z-index: 2;
+}
+
 .upgrade__title {
   font-family: var(--second-family);
   font-weight: 400;
@@ -376,17 +388,6 @@ a {
   position: relative;
 }
 
-.upgrade__subtitle::after {
-  content: '';
-  width: 325px;
-  height: 200px;
-  top: 48px;
-  left: 5px;
-  position: absolute;
-  background: url('./images/upgrade_air_mobile.png') no-repeat;
-  z-index: 2;
-}
-
 .upgrade__slider-container {
   position: relative;
   max-width: 335px;
@@ -399,6 +400,7 @@ a {
   align-items: center;
   transition: all 0.5s;
   margin-bottom: 30px;
+  position: relative;
 }
 
 .slider__item {
@@ -524,17 +526,11 @@ a {
 }
 
 .itemsTourney__slider-container {
-  /* position: relative;
-  max-width: 335px;
-  overflow: hidden; */
 
 }
 
 .itemsTourney__slider {
-  /* display: flex;
-  align-items: center;
-  transition: all 0.5s; */
-  /* margin-bottom: 40px; */
+  margin-bottom: 40px;
 }
 
 .itemsTourney__item {
@@ -609,7 +605,10 @@ a {
 
 .itemsTourney__button--next {}
 
-.itemsTourney__wrap-counter {}
+.itemsTourney__wrap-counter span {
+  font-size: 16px;
+  color: var(--black);
+}
 
 .footer {
   /* max-width: 375px; */
@@ -881,6 +880,16 @@ a {
     position: relative;
   }
 
+  .main__upgrade::before {
+    content: '';
+    width: 380px;
+    height: 250px;
+    top: 351px;
+    left: 956px;
+    position: absolute;
+    background: url('./images/d_upgrade_air.png') no-repeat;
+  }
+
   .upgrade__title {
     font-size: 54px;
     line-height: 120%;
@@ -895,10 +904,6 @@ a {
     position: absolute;
     top: 72px;
     left: 373px;
-  }
-
-  .upgrade__subtitle::after {
-    display: none;
   }
 
   .upgrade__slider-container {
@@ -921,7 +926,6 @@ a {
     min-height: 112px;
     width: 394px;
     padding: 20px;
-    /* padding-left: 62px; */
   }
 
   .slider__wrap-items .slider__item {
@@ -985,7 +989,7 @@ a {
   .main__itemsTourney {
     padding: 0 72px;
     position: relative;
-    margin-bottom: 140px;
+    margin-bottom: 139px;
   }
 
   .itemsTourney__title {
@@ -1033,6 +1037,25 @@ a {
 
   .itemsTourney__button svg path {
     stroke-width: 2px;
+  }
+
+  .footer {
+
+  }
+
+  .footer__runLine {
+    height: 60px;
+    padding: 16px 12px;
+  }
+
+  .footer__notice {
+    padding-left: 72px;
+    padding-right: 72px;
+    padding-bottom: 70px;
+  }
+
+  .footer__notice br {
+    display: none;
   }
 }
 

@@ -63,24 +63,6 @@ const dots = document.querySelectorAll('.sliderControl__dot');
 let sliderCount = 0;
 let sliderWidth;
 
-// function rollSlider(slider, count, width) {
-//   slider.style.transform = `translateX(${-count * width}px)`;
-// }
-
-// function showSlide(width, sliderContainer, slider, sliderItems, count, ) {
-//   width = sliderContainer.offsetWidth;
-//   slider.style.width = width * sliderItems.length + 'px';
-//   for (let elem of sliderItems) {
-//     elem.style.width = width + 'px'
-//   }
-//   // sliderItems.forEach(item => item.style.width = width + 'px');
-
-//   rollSlider(slider, count, width);
-// }
-
-
-
-
 buttonNext.addEventListener('click', nextSlide);
 buttonPrev.addEventListener('click', prevSlide);
 
@@ -107,15 +89,12 @@ function rollSlider() {
     slider.style.transform = 'translateX(0)';
     return;
   } else {
-    //console.log('меньше 1366');
     slider.style.transform = `translateX(${-sliderCount * sliderWidth}px)`;
   }
 }
 
 function nextSlide() {
   sliderCount++;
-  //console.log(sliderCount);
-  //console.log(sliderItems.length - 1);
   if (buttonPrev.hasAttribute('disabled') === true) {
     buttonPrev.removeAttribute('disabled');
   } else if (sliderCount >= sliderItems.length - 1) {

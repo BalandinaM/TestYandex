@@ -4,7 +4,7 @@ const totalValueCounter = document.querySelector('#total');
 const buttonTourneyPrev = document.querySelector('#btnPrevTourney');
 const buttonTourneyNext = document.querySelector('#btnNextTourney');
 
-const INTERVAL = 2000;
+const INTERVAL = 3000;
 
 totalValueCounter.textContent = itemsTourney.length;
 
@@ -12,7 +12,7 @@ function showNumberCurrentSlide(index) {
   currentValueCounter.textContent = `${index + 1}`
 }
 
-async function delayedLoop() {
+async function showSlideSmallViewport() {
   for (elem of itemsTourney) {
     elem.classList.remove("itemsTourney__item--current");
   }
@@ -26,7 +26,7 @@ async function delayedLoop() {
   }
 }
 
-async function Function() {
+async function showSlideBigViewport() {
   for (let j = 1; j <= 2; j++) {
     let currentItem = [];
 
@@ -38,12 +38,14 @@ async function Function() {
         item.classList.add("itemsTourney__item--current");
       });
 
-      currentValueCounter.textContent = '3'
+      currentValueCounter.textContent = `${itemsTourney.length / 2}`;
 
-      await new Promise((resolve) => setTimeout(resolve, 3000));
+      await new Promise((resolve) => setTimeout(resolve, INTERVAL));
+
       currentItem.forEach((item) => {
         item.classList.remove("itemsTourney__item--current");
       });
+
     } else if (j === 2) {
       for (let i = 3; i < 6; i++) {
         currentItem.push(itemsTourney[i]);
@@ -52,9 +54,9 @@ async function Function() {
         item.classList.add("itemsTourney__item--current");
       });
 
-      currentValueCounter.textContent = '6'
+      currentValueCounter.textContent = itemsTourney.length;
 
-      await new Promise((resolve) => setTimeout(resolve, 3000));
+      await new Promise((resolve) => setTimeout(resolve, INTERVAL));
       currentItem.forEach((item) => {
         item.classList.remove("itemsTourney__item--current");
       });
@@ -65,11 +67,9 @@ async function Function() {
 const checkWidth = () => {
   let width = document.documentElement.clientWidth;
   if (width >= 1366) {
-    console.log("Большой экран, большой экран!!!");
-    Function();
+    showSlideBigViewport();
   } else {
-    console.log("Маааленький экран");
-    delayedLoop();
+    showSlideSmallViewport();
   }
 };
 
@@ -77,16 +77,17 @@ checkWidth();
 
 const bigViewport = setInterval(() => {
   if (document.documentElement.clientWidth >= 1366) {
-    Function();
+    showSlideBigViewport();
   } else {
     clearInterval(bigViewport);
   }
-}, 6000);
+}, INTERVAL * 2);
 
 const smallViewport = setInterval(() => {
   if (document.documentElement.clientWidth < 1366) {
-    delayedLoop();
+    showSlideSmallViewport();
   } else {
     clearInterval(smallViewport);
   }
 }, itemsTourney.length * INTERVAL);
+
