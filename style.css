@@ -102,7 +102,7 @@ a {
 
 .body {
   min-width: 375px;
-  max-width: 1366px;
+  width: 375px;
   margin: 0 auto;
   min-height: 100%;
 
@@ -116,6 +116,7 @@ a {
 /*Header*/
 
 .wrap-header {
+  width: 375px;
   background-blend-mode: color-burn;
   background:
     /* url(./images/header_bg_5.png) 3px 384px no-repeat, */
@@ -135,7 +136,6 @@ a {
 
 .container {
   width: 375px;
-  margin: 0 auto;
 }
 
 .header__logo {
@@ -218,10 +218,27 @@ a {
 
 .wrap-runLine {
   background-color: var(--red);
-  padding: 10px 12px;
+  padding: 10px 0px;
   height: 38px;
+  /* overflow: hidden; */
+  /* display: flex; */
 
-  display: flex;
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.runLine {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-45%); }
 }
 
 .runLine__text {
@@ -230,23 +247,29 @@ a {
   font-size: 16px;
   line-height: 110%;
   text-transform: uppercase;
-  text-align: right;
   color: var(--white);
 }
 
-.runLine__span::before {
+.runLine__text span {
+  display: inline-block;
+  margin-bottom: 3px;
+  margin-right: 12px;
+  margin-left: 12px;
+
   content: '';
   width: 6px;
   height: 6px;
+  /* position: absolute; */
   background-color: var(--white);
   border-radius: 50%;
+
 }
 
 /*Main*/
 
 .main {
   width: 375px;
-  margin: 0 auto;
+  position: relative;
 }
 
 /*Event*/
@@ -362,7 +385,7 @@ a {
   content: '';
   width: 325px;
   height: 200px;
-  top: 2935px;
+  top: 2125px;
   left: 30px;
   position: absolute;
   background: url('./images/upgrade_air_mobile.png') no-repeat;
@@ -611,7 +634,7 @@ a {
 }
 
 .footer {
-  /* max-width: 375px; */
+  width: 375px;
 }
 
 /* .footer__runLine {
@@ -686,6 +709,14 @@ a {
 /* Viewport  1366px*/
 
 @media (min-width: 1366px) {
+  .body {
+    width: 1366px;
+  }
+
+  .wrap-header {
+    width: 1366px;
+  }
+
   .header {
     padding-top: 26px;
     background:
@@ -747,16 +778,27 @@ a {
     border: 2px solid var(--bg-black);
   }
 
-  .header__runLine {
+  .wrap-runLine {
     height: 60px;
-
-    padding: 16px 12px;
+    padding: 16px 0;
   }
 
-  .header__runLine p {
+  .runLine {
+    animation: marquee 15s linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-39%); }
+  }
+
+  .runLine__text {
     font-size: 22px;
   }
 
+  .runLine__text span {
+    margin-bottom: 5px;
+  }
   /*Main*/
 
   .main {
@@ -1040,8 +1082,7 @@ a {
   }
 
   .footer {
-
-  }
+    width: 1366px;
 
   .footer__runLine {
     height: 60px;
