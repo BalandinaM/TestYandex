@@ -1,53 +1,24 @@
-//Изменение наполнения карточек в upgrade в зависимости от ширины экрана
-
 const wrapItems = Array.from(document.querySelectorAll('.slider__wrap-items'));
-const items = Array.from(document.querySelectorAll('.wrap-items__item'));
-const sliderControl = document.querySelector('.upgrade__sliderControl');
 let sizeDesktop = 1366;
 
-// это можно сделать через css
-
-// let hiddenControlSlider = () => {
-//   if (window.screen.width >= sizeDesktop) {
-//     sliderControl.style.display = "none";
-//   } else if (window.screen.width < sizeDesktop) {
-//     sliderControl.style.display = "flex";
-//   }
-// };
-
-
 let setClassDepScreenWidth = () => {
-  //hiddenControlSlider();
   if (window.screen.width >= sizeDesktop) {
+
     for (let elem of wrapItems) {
-      //console.log('!!!');
-      // elem.classList.remove("slider__wrap-items");
       elem.classList.remove("slider__item");
     }
-    // for (let elem of items) {
-    //   //elem.classList.remove("wrap-items__item");
-    //   //elem.classList.add("slider__item");
-    // }
   } else {
     for (let elem of wrapItems) {
-      //console.log('---');
-      //elem.classList.add("slider__wrap-items");
       elem.classList.add("slider__item");
     }
-    // for (let elem of items) {
-    //   elem.classList.add("wrap-items__item");
-    //   elem.classList.remove("slider__item");
-    // }
   }
 };
 
 setClassDepScreenWidth();
 
 window.addEventListener('resize', (e) => {
-  //hiddenControlSlider();
   setClassDepScreenWidth();
   showSlide();
-
 })
 
 
@@ -70,6 +41,7 @@ buttonPrev.addEventListener('click', prevSlide);
 function showSlide() {
   if (window.screen.width >= sizeDesktop) {
     slider.style.width = '1222px';
+    slider.style.transform = 'translateX(0)';
     sliderItems.forEach((item) => (item.style.width = 'auto'));
     return;
   } else {

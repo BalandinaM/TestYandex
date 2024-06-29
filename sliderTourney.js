@@ -90,4 +90,3 @@ const smallViewport = setInterval(() => {
     clearInterval(smallViewport);
   }
 }, itemsTourney.length * INTERVAL);
-
