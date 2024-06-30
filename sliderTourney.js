@@ -4,7 +4,7 @@ const totalValueCounter = document.querySelector('#total');
 const buttonTourneyPrev = document.querySelector('#btnPrevTourney');
 const buttonTourneyNext = document.querySelector('#btnNextTourney');
 
-const INTERVAL = 3000;
+const INTERVAL = 4000;
 
 totalValueCounter.textContent = itemsTourney.length;
 
